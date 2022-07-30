@@ -1,8 +1,9 @@
-# Parameters:
+Parameters:
 # Existing Bucket name
-PipelineID:
-  Description: Existing Bucket name
-  Type: String
+  PipelineID:
+    Description: Existing Bucket name
+    Type: String
+    Default: 'samplestring'
 Resources:
     CloudFrontOriginAccessIdentity:
       Type: "AWS::CloudFront::CloudFrontOriginAccessIdentity"
@@ -25,8 +26,8 @@ Resources:
               QueryString: False
             TargetOriginId: webpage
             ViewerProtocolPolicy: allow-all
-    Outputs:
-      PipelineID:
-        Value: !Sub ${PipelineID}
-        Export:
-          Name: PipelineID
+    # Outputs:
+    #   PipelineID:
+    #     Value: !Sub ${PipelineID}
+    #     Export:
+    #       Name: PipelineID
